@@ -1,0 +1,144 @@
+/* Ablauf als horizontale Scroll-Timeline (Ladenbau). Maße in vw, wie die Vorlage. */
+.tl {
+  --tl-accent: var(--cm-red, #a91b18);
+  --tl-text: var(--cm-black, #181717);
+  --tl-muted: #4a4846;
+  position: relative;
+  width: 100%;
+  height: 200vw;
+  background: #fff;
+  color: var(--tl-text);
+}
+.tl h2, .tl h4, .tl p { margin: 0; }
+
+.tl__stick {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 10%;
+  overflow: hidden;
+}
+
+.tl__slider {
+  display: flex;
+  align-items: center;
+  gap: 5vw;
+  width: 240vw;
+  height: 30vw;
+  margin-right: 2vw;
+  padding: 0 5vw;
+  will-change: transform;
+}
+
+.tl__img {
+  flex: none;
+  width: 30vw;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 1vw;
+  background: var(--cm-soft, #f3f2ef);
+}
+.tl__img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.tl__track { position: relative; width: 100%; height: 100%; }
+
+/* Mittelachse: Punkt, Linie die sich zieht, Punkt */
+.tl__axis {
+  position: absolute;
+  left: 0;
+  top: 49%;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+}
+.tl__axis-dot { width: 0.8vw; height: 0.8vw; border-radius: 50%; background: var(--tl-accent); }
+.journey-line { width: 0; height: 1px; border-radius: 999px; background: var(--tl-accent); }
+
+.tl__row { display: flex; align-items: center; justify-content: flex-start; width: 100%; height: 50%; }
+.tl__row--top { gap: 0.5vw; }
+
+.tl__head { width: 20%; height: 100%; padding-top: 2vw; }
+.tl__head h2 {
+  width: 65%;
+  font-size: 3vw;
+  line-height: 0.95;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+.tl__head h2 em { font-style: normal; color: var(--tl-accent); }
+
+.tl__period { width: 34%; height: 100%; padding-top: 2vw; }
+.tl__period p {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 1.1vw;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1.3;
+  color: var(--tl-muted);
+}
+
+.tl__items { display: flex; width: 100%; height: 100%; }
+.tl__items--top { column-gap: 15vw; }
+.tl__items--bottom { column-gap: 20vw; margin-left: 7vw; }
+
+.tl__item { position: relative; height: 100%; padding: 0 3vw; }
+.tl__items--top .tl__item { width: 30vw; }
+.tl__items--bottom .tl__item { width: 25vw; }
+
+.tl__stem { position: absolute; left: 0; width: 100%; height: 100%; }
+.tl__stem--top { top: 0; bottom: 0; }
+.tl__stem--bottom { bottom: -1%; }
+
+.tl__stem-dot {
+  position: relative;
+  width: 1vw;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--tl-accent);
+  transform: translateX(-50%);
+}
+.tl__stem-line { width: 1px; height: 94%; border-radius: 999px; background: var(--tl-accent); }
+.tl__stem--top .tl__stem-line { transform-origin: bottom; }
+.tl__stem--bottom .tl__stem-line { transform-origin: top; }
+
+.tl__text { display: flex; flex-direction: column; gap: 1vw; }
+.tl__items--top .tl__text { margin-top: -1vw; }
+.tl__items--bottom .tl__text { height: 100%; justify-content: flex-end; }
+
+.tl__text h4 {
+  font-size: 2.5vw;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+.tl__text h4 .tl__no { color: var(--tl-accent); }
+.tl__text p { width: 90%; font-size: 1.5vw; line-height: 1.15; color: var(--tl-muted); }
+
+/* Mobil, wie in der Vorlage */
+@media (max-width: 600px) {
+  .tl { height: 400vh; }
+  .tl__stick { top: 0; padding-top: 12vw; }
+  .tl__slider { width: 800vw; height: 80vh; padding: 0 7vw; }
+  .tl__img { width: 85vw; height: 65vw; border-radius: 5vw; }
+  .tl__axis-dot { width: 2vw; height: 2vw; }
+  .tl__head { height: fit-content; padding-top: 5vw; }
+  .tl__head h2 { font-size: 8.5vw; }
+  .tl__period { width: 30%; padding-top: 5vw; }
+  .tl__period p { font-size: 3.2vw; }
+  .tl__items--top { column-gap: 40vw; }
+  .tl__items--bottom { column-gap: 40vw; margin-left: 7vw; }
+  .tl__items--top .tl__item { width: 70vw; display: flex; flex-direction: column; padding: 0 7vw; }
+  .tl__items--bottom .tl__item { width: 70vw; padding: 0 7vw; }
+  .tl__stem-dot { width: 2.5vw; }
+  .tl__stem--bottom .tl__stem-line { height: 100%; }
+  .tl__text { gap: 3vw; }
+  .tl__items--top .tl__text { margin-top: -2vw; }
+  .tl__text h4 { font-size: 6.4vw; }
+  .tl__text p { font-size: 4.8vw; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journey-line { width: 98%; }
+}
