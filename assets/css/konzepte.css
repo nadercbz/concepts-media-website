@@ -57,3 +57,12 @@
   .kz-bar a { background: var(--cm-red); color: #fff; border-radius: 999px; padding: .5rem 1rem; text-decoration: none; font-weight: 600; font-size: .92rem; }
 }
 @media (prefers-reduced-motion: reduce) { .kz-pack, .kz-block, .kz-bar { transition: none; } .kz-summary.is-flash { animation: none; } }
+
+/* Ausgangslage */
+.kz-scen { display: block; width: 100%; text-align: left; font: inherit; color: inherit; cursor: pointer; transition: border-color .25s var(--cm-ease), background .25s var(--cm-ease), transform .25s var(--cm-ease); }
+.kz-scen:hover { border-color: var(--cm-black); transform: translateY(-2px); }
+.kz-scen[aria-pressed="true"] { border-color: var(--cm-red); background: #fff7f6; }
+.kz-scen:focus-visible { outline: 2px solid var(--cm-red); outline-offset: 2px; }
+.kz-alt { color: #4a4846; }
+.kz-summary-scen { font-size: .92rem; color: var(--cm-grey); margin: -.6rem 0 1rem; }
+.kz-summary-scen b { color: var(--cm-black); font-weight: 600; }

@@ -47,7 +47,7 @@
     return out;
   }
 
-  var sel = new Set(); var packName = '';
+  var sel = new Set(); var packName = ''; var scen = '';
   var elPacks = document.getElementById('kzPakete');
   var elBlocks = document.getElementById('kzBausteine');
   if (!elPacks || !elBlocks) return;
@@ -84,12 +84,19 @@
     document.getElementById('kzBarCount').textContent = ids.length;
     bar.classList.toggle('is-on', ids.length > 0);
     elList.innerHTML = ids.length ? ids.map(function (k) { return '<li>' + LABEL[k] + '</li>'; }).join('') : '<li class="kz-empty">Noch nichts ausgewählt.</li>';
-    var body = 'Hallo Concepts Media,\n\nich interessiere mich für ein Konzept Paket' + (packName ? ' (Start: ' + packName + ')' : '') + '.\n\nMeine Bausteine:\n' +
+    var body = 'Hallo Concepts Media,\n\nich interessiere mich für ein Konzept Paket' + (packName ? ' (Start: ' + packName + ')' : '') + '.\n' + (scen ? '\nAusgangslage: ' + scen + '\n' : '') + '\nMeine Bausteine:\n' +
       ids.map(function (k) { return '- ' + LABEL[k]; }).join('\n') + '\n\nMein Vorhaben:\n\n\nViele Grüße';
     elSend.href = 'mailto:' + MAIL + '?subject=' + encodeURIComponent('Konzept Paket Anfrage') + '&body=' + encodeURIComponent(body);
     elSend.style.pointerEvents = ids.length ? '' : 'none';
     elSend.style.opacity = ids.length ? '' : '.45';
   }
+  function renderScen() {
+    document.querySelectorAll('.kz-scen').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.scen === scen ? 'true' : 'false'); });
+    var el = document.getElementById('kzScen'); if (el) el.innerHTML = scen ? 'Ausgangslage: <b>' + scen + '</b>' : 'Ausgangslage: noch nicht gewählt';
+  }
+  document.querySelectorAll('.kz-scen').forEach(function (b) {
+    b.addEventListener('click', function () { scen = scen === b.dataset.scen ? '' : b.dataset.scen; renderScen(); render(); });
+  });
   function flash() { elSum.classList.remove('is-flash'); void elSum.offsetWidth; elSum.classList.add('is-flash'); }
 
   elBlocks.addEventListener('click', function (e) {

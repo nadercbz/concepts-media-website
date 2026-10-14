@@ -45,8 +45,9 @@
           <h1 class="display mb-4">Ihr Konzept. <em>Komplett aus einer Hand.</em></h1>
           <p class="lead-text mb-4">Vom Logo über die Website bis zum fertigen Store. Wir entwickeln Ihr Gastro Konzept nach unserem System, oder Sie übernehmen ein fertiges Konzept von uns.</p>
           <div class="d-flex flex-wrap gap-2">
-            <a class="btn-cm" href="#pakete">Pakete ansehen</a>
-            <a class="btn-cm-outline" href="#baukasten">Selbst zusammenstellen</a>
+            <a class="btn-cm" href="#erklaervideo">Video ansehen</a>
+            <a class="btn-cm-outline" href="#pakete">Pakete ansehen</a>
+            
           </div>
         </div>
         <div class="col-lg-5">
@@ -56,26 +57,45 @@
     </div>
   </section>
 
-  <section class="section section-mist">
+  <section class="section pt-0" id="erklaervideo">
     <div class="container">
-      <p class="eyebrow mb-2">Zwei Wege</p>
-      <h2 class="section-title mb-5">Neu entwickeln oder <em>fertig übernehmen.</em></h2>
+      <div class="video-block">
+        <video controls playsinline preload="metadata" poster="assets/media/konzepte-erklaervideo.jpg">
+          <source src="assets/media/konzepte-erklaervideo.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-mist" id="ausgangslage">
+    <div class="container">
+      <p class="eyebrow mb-2">Ihre Ausgangslage</p>
+      <h2 class="section-title mb-3">Wo stehen Sie <em>gerade?</em></h2>
+      <p class="lead-text mb-5">Wählen Sie, was zu Ihnen passt. Das nehmen wir direkt in Ihre Anfrage mit.</p>
       <div class="row g-4">
-        <div class="col-md-6">
-          <div class="kz-way">
+        <div class="col-md-4">
+          <button type="button" class="kz-way kz-scen" data-scen="Neues Konzept aufbauen" aria-pressed="false">
             <div class="num">01</div>
-            <h3>Konzept für Sie entwickeln</h3>
-            <p class="mb-0 text-secondary">Sie haben eine Idee oder ein Produkt. Wir bauen daraus Schritt für Schritt eine Marke mit allem, was Sie zum Eröffnen brauchen. Jeder Schritt wird von Ihnen freigegeben.</p>
-          </div>
+            <h3>Neues Konzept aufbauen</h3>
+            <p class="mb-0 text-secondary">Sie haben eine Idee oder ein Produkt. Wir bauen daraus eine komplette Marke, Schritt für Schritt bis zur Eröffnung.</p>
+          </button>
         </div>
-        <div class="col-md-6">
-          <div class="kz-way">
+        <div class="col-md-4">
+          <button type="button" class="kz-way kz-scen" data-scen="Redesign" aria-pressed="false">
             <div class="num">02</div>
-            <h3>Fertiges Konzept übernehmen</h3>
-            <p class="mb-0 text-secondary">Sie wollen schnell starten. Sie übernehmen ein Konzept, das schon steht: Marke, Produkt, Store und Abläufe. Wir passen es an Ihre Fläche an.</p>
-          </div>
+            <h3>Redesign</h3>
+            <p class="mb-0 text-secondary">Ihr Konzept läuft schon. Es braucht einen neuen, modernen Auftritt, vom Logo bis zum Laden.</p>
+          </button>
+        </div>
+        <div class="col-md-4">
+          <button type="button" class="kz-way kz-scen" data-scen="Konzept vervollständigen" aria-pressed="false">
+            <div class="num">03</div>
+            <h3>Konzept vervollständigen</h3>
+            <p class="mb-0 text-secondary">Vieles steht schon. Wir ergänzen genau die Bausteine, die noch fehlen.</p>
+          </button>
         </div>
       </div>
+      <p class="kz-alt mt-4 mb-0">Lieber sofort starten? Sie können auch ein <strong>fertiges Konzept</strong> von uns übernehmen, wir passen es an Ihre Fläche an.</p>
     </div>
   </section>
 
@@ -99,6 +119,7 @@
           <aside class="kz-summary" id="kzSummary" aria-live="polite">
             <p class="kz-summary-label">Ihr Paket</p>
             <p class="kz-summary-count"><span id="kzCount">0</span> Bausteine</p>
+            <p class="kz-summary-scen" id="kzScen">Ausgangslage: noch nicht gewählt</p>
             <ul class="kz-summary-list" id="kzList"><li class="kz-empty">Noch nichts ausgewählt.</li></ul>
             <a class="btn-cm w-100 justify-content-center" id="kzSend" href="#">Paket anfragen</a>
             <button type="button" class="kz-reset" id="kzReset">Auswahl leeren</button>
