@@ -66,3 +66,9 @@
 .kz-alt { color: #4a4846; }
 .kz-summary-scen { font-size: .92rem; color: var(--cm-grey); margin: -.6rem 0 1rem; }
 .kz-summary-scen b { color: var(--cm-black); font-weight: 600; }
+
+/* Video je Ausgangslage */
+.kz-vid { margin-top: 16px; border-radius: 18px; }
+.kz-scen { height: auto; }
+#ausgangslage .row > [class*="col-"] { display: flex; flex-direction: column; }
+#ausgangslage .kz-scen { flex: 1 1 auto; }

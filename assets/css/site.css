@@ -499,3 +499,6 @@ a .service-card:hover, .service-card:hover { transform: translateY(-6px); box-sh
   .hero { min-height: 92svh; }
   .preloader { padding: 1.25rem; }
 }
+
+/* Handy: großer Spaltenabstand (g-5) erzeugte 12 px seitliches Scrollen */
+@media (max-width: 575.98px) { .row.g-5 { --bs-gutter-x: 1.5rem; } }
