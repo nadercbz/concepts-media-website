@@ -1,0 +1,59 @@
+/* Seite Konzepte: Pakete und Baukasten */
+.kz-way { background: #fff; border: 1px solid var(--cm-line); border-radius: var(--cm-radius); padding: 2rem; height: 100%; }
+.kz-way .num, .kz-pack .num { font-family: "Geist Mono", ui-monospace, monospace; color: var(--cm-red); font-size: .85rem; letter-spacing: .12em; margin-bottom: .8rem; }
+.kz-way h3 { font-size: 1.45rem; font-weight: 600; letter-spacing: -.02em; }
+
+.kz-pack { position: relative; display: flex; flex-direction: column; height: 100%; border: 1.5px solid var(--cm-line); border-radius: var(--cm-radius); padding: 2rem; background: #fff; transition: border-color .3s var(--cm-ease), transform .3s var(--cm-ease); }
+.kz-pack:hover { border-color: var(--cm-black); transform: translateY(-3px); }
+.kz-pack.is-top { background: var(--cm-black); color: #fff; border-color: var(--cm-black); }
+.kz-pack.is-top h3 { color: #fff; }
+.kz-pack.is-top .kz-pack-sub, .kz-pack.is-top li { color: #cfcdc7; }
+.kz-pack.is-top .num { color: var(--cm-red-light); }
+.kz-pack h3 { font-size: 1.7rem; font-weight: 600; letter-spacing: -.03em; margin-bottom: .3rem; }
+.kz-pack-sub { color: var(--cm-grey); margin-bottom: 1.4rem; }
+.kz-pack ul { list-style: none; padding: 0; margin: 0 0 1.8rem; flex: 1; }
+.kz-pack li { padding: .45rem 0 .45rem 1.6rem; position: relative; border-top: 1px solid rgba(0,0,0,.07); }
+.kz-pack.is-top li { border-top-color: rgba(255,255,255,.12); }
+.kz-pack li::before { content: ""; position: absolute; left: 0; top: 1rem; width: .7rem; height: .7rem; border-radius: 50%; background: var(--cm-red); }
+.kz-pack li.kz-plus { font-weight: 600; }
+.kz-pack li.kz-plus::before { background: transparent; border: 2px solid var(--cm-red); }
+.kz-badge { position: absolute; top: 1.4rem; right: 1.4rem; background: var(--cm-red); color: #fff; font-size: .75rem; font-weight: 600; padding: .25rem .7rem; border-radius: 999px; }
+.kz-pack .btn-cm, .kz-pack .btn-cm-outline { justify-content: center; }
+.kz-pack.is-top .btn-cm-outline { color: #fff; border-color: #fff; }
+
+.kz-group + .kz-group { margin-top: 2rem; }
+.kz-group h3 { font-size: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; color: var(--cm-grey); margin-bottom: .9rem; }
+.kz-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: .8rem; }
+.kz-block { text-align: left; background: #fff; border: 1.5px solid var(--cm-line); border-radius: 16px; padding: 1rem 1rem 1rem 3rem; position: relative; cursor: pointer; transition: border-color .25s var(--cm-ease), background .25s var(--cm-ease); font: inherit; color: inherit; width: 100%; }
+.kz-block:hover { border-color: var(--cm-black); }
+.kz-block strong { display: block; font-weight: 600; line-height: 1.3; }
+.kz-block span { display: block; font-size: .88rem; color: var(--cm-grey); line-height: 1.45; margin-top: .25rem; }
+.kz-block::before { content: ""; position: absolute; left: 1rem; top: 1.1rem; width: 1.3rem; height: 1.3rem; border-radius: 50%; border: 1.5px solid #b9b6b0; transition: all .25s var(--cm-ease); }
+.kz-block[aria-pressed="true"] { border-color: var(--cm-red); background: #fff7f6; }
+.kz-block[aria-pressed="true"]::before { background: var(--cm-red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/70% no-repeat; border-color: var(--cm-red); }
+.kz-block:focus-visible { outline: 2px solid var(--cm-red); outline-offset: 2px; }
+
+.kz-summary { position: sticky; top: 100px; background: #fff; border-radius: var(--cm-radius); border: 1.5px solid var(--cm-black); padding: 1.6rem; }
+.kz-summary-label { font-family: "Geist Mono", ui-monospace, monospace; text-transform: uppercase; letter-spacing: .14em; font-size: .78rem; color: var(--cm-red); margin: 0 0 .3rem; }
+.kz-summary-count { font-size: 1.8rem; font-weight: 600; letter-spacing: -.03em; margin: 0 0 1rem; }
+.kz-summary-list { list-style: none; padding: 0; margin: 0 0 1.4rem; max-height: 320px; overflow: auto; }
+.kz-summary-list li { padding: .35rem 0; border-top: 1px solid var(--cm-line); font-size: .95rem; }
+.kz-summary-list .kz-empty { color: var(--cm-grey); border: 0; }
+.kz-reset { background: none; border: 0; color: var(--cm-grey); text-decoration: underline; font-size: .9rem; margin-top: .8rem; padding: 0; }
+.kz-note { font-size: .85rem; color: var(--cm-grey); margin-top: .8rem; }
+.kz-summary.is-flash { animation: kzFlash .6s var(--cm-ease); }
+@keyframes kzFlash { 0% { box-shadow: 0 0 0 0 rgba(169,27,24,.35); } 100% { box-shadow: 0 0 0 14px rgba(169,27,24,0); } }
+
+.kz-steps { padding-left: 1.2rem; margin: 0; }
+.kz-steps li { padding: .6rem 0; }
+.kz-steps li::marker { color: var(--cm-red); font-weight: 600; }
+
+/* Handy: Paket als Leiste unten */
+.kz-bar { display: none; }
+@media (max-width: 991.98px) {
+  .kz-summary { position: static; }
+  .kz-bar { display: flex; position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 50; align-items: center; justify-content: space-between; gap: 1rem; background: var(--cm-black); color: #fff; border-radius: 999px; padding: .6rem .6rem .6rem 1.3rem; box-shadow: 0 10px 30px rgba(0,0,0,.25); transform: translateY(140%); transition: transform .4s var(--cm-ease); }
+  .kz-bar.is-on { transform: none; }
+  .kz-bar a { background: var(--cm-red); color: #fff; border-radius: 999px; padding: .5rem 1rem; text-decoration: none; font-weight: 600; font-size: .92rem; }
+}
+@media (prefers-reduced-motion: reduce) { .kz-pack, .kz-block, .kz-bar { transition: none; } .kz-summary.is-flash { animation: none; } }

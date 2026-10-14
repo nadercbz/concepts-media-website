@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Konzepte | Concepts Media</title>
+  <meta name="description" content="Komplette Unternehmensdarstellung für Gastronomie aus einer Hand: Logo, Marke, Website, Store und Betrieb. Drei Pakete oder individuell zusammengestellt.">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/konzepte.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar navbar-expand-lg py-3">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><img class="site-logo" src="assets/logo/cm-logo-dark.png" alt="Concepts Media"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Menü öffnen">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto site-nav align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="standorte.html">Standorte</a></li>
+          <li class="nav-item"><a class="nav-link" href="vermieter.html">Für Vermieter</a></li>
+          <li class="nav-item"><a class="nav-link" href="visualisierung.html">Visualisierung</a></li>
+          <li class="nav-item"><a class="nav-link" href="ladenbau.html">Ladenbau</a></li>
+          <li class="nav-item"><a class="nav-link active" href="konzepte.html" aria-current="page">Konzepte</a></li>
+          <li class="nav-item"><a class="nav-link" href="referenzen.html">Referenzen</a></li>
+          <li class="nav-item"><a class="nav-link" href="ueber-uns.html">Über uns</a></li>
+          <li class="nav-item ms-lg-3"><a class="btn-cm" href="kontakt.html">Anfrage senden</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-7">
+          <p class="eyebrow mb-3">Marke und Konzept</p>
+          <h1 class="display mb-4">Ihr Konzept. <em>Komplett aus einer Hand.</em></h1>
+          <p class="lead-text mb-4">Vom Logo über die Website bis zum fertigen Store. Wir entwickeln Ihr Gastro Konzept nach unserem System, oder Sie übernehmen ein fertiges Konzept von uns.</p>
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn-cm" href="#pakete">Pakete ansehen</a>
+            <a class="btn-cm-outline" href="#baukasten">Selbst zusammenstellen</a>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <img class="media-frame" src="assets/media/render-comebuy-theke.jpg" alt="3D Visualisierung einer Theke">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-mist">
+    <div class="container">
+      <p class="eyebrow mb-2">Zwei Wege</p>
+      <h2 class="section-title mb-5">Neu entwickeln oder <em>fertig übernehmen.</em></h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="kz-way">
+            <div class="num">01</div>
+            <h3>Konzept für Sie entwickeln</h3>
+            <p class="mb-0 text-secondary">Sie haben eine Idee oder ein Produkt. Wir bauen daraus Schritt für Schritt eine Marke mit allem, was Sie zum Eröffnen brauchen. Jeder Schritt wird von Ihnen freigegeben.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="kz-way">
+            <div class="num">02</div>
+            <h3>Fertiges Konzept übernehmen</h3>
+            <p class="mb-0 text-secondary">Sie wollen schnell starten. Sie übernehmen ein Konzept, das schon steht: Marke, Produkt, Store und Abläufe. Wir passen es an Ihre Fläche an.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pakete">
+    <div class="container">
+      <p class="eyebrow mb-2">Pakete für Gastronomie</p>
+      <h2 class="section-title mb-3">Drei Pakete. <em>Das Wichtigste ist schon drin.</em></h2>
+      <p class="lead-text mb-5">Wählen Sie ein Paket als Start. Im Baukasten darunter können Sie es jederzeit erweitern oder anpassen.</p>
+      <div class="row g-4" id="kzPakete"></div>
+    </div>
+  </section>
+
+  <section class="section section-mist" id="baukasten">
+    <div class="container">
+      <p class="eyebrow mb-2">Baukasten</p>
+      <h2 class="section-title mb-3">Ihr Paket, <em>Baustein für Baustein.</em></h2>
+      <p class="lead-text mb-5">Klicken Sie an, was Sie brauchen. Rechts sehen Sie Ihr Paket. Mit einem Klick schicken Sie uns die Auswahl, wir melden uns mit einem Angebot.</p>
+      <div class="row g-4">
+        <div class="col-lg-8" id="kzBausteine"></div>
+        <div class="col-lg-4">
+          <aside class="kz-summary" id="kzSummary" aria-live="polite">
+            <p class="kz-summary-label">Ihr Paket</p>
+            <p class="kz-summary-count"><span id="kzCount">0</span> Bausteine</p>
+            <ul class="kz-summary-list" id="kzList"><li class="kz-empty">Noch nichts ausgewählt.</li></ul>
+            <a class="btn-cm w-100 justify-content-center" id="kzSend" href="#">Paket anfragen</a>
+            <button type="button" class="kz-reset" id="kzReset">Auswahl leeren</button>
+            <p class="kz-note mb-0">Preis nach Umfang, Sie bekommen ein festes Angebot.</p>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-6">
+          <img class="media-frame" src="assets/media/team-planung.jpg" alt="Team bei der Planung">
+        </div>
+        <div class="col-lg-6">
+          <p class="eyebrow mb-2">So läuft es ab</p>
+          <h2 class="section-title mb-4">Einfach in drei Schritten.</h2>
+          <ol class="kz-steps">
+            <li><strong>Gespräch.</strong> Sie erzählen uns Ihre Idee, Ihr Produkt oder Ihre Fläche.</li>
+            <li><strong>Entwurf und Freigabe.</strong> Wir bauen Baustein für Baustein, Sie geben jeden Schritt frei.</li>
+            <li><strong>Übergabe.</strong> Sie bekommen alle Dateien, fertig für Druck, Web, Ladenbau und Team.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-ink">
+    <div class="container text-center">
+      <h2 class="section-title mb-4">Lassen Sie uns <em>Ihr Konzept bauen.</em></h2>
+      <p class="lead-text mx-auto mb-5">Ein kurzes Gespräch reicht für den Start. Wir zeigen Ihnen, welches Paket zu Ihnen passt.</p>
+      <a class="btn-cm" href="kontakt.html">Gespräch vereinbaren</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="mb-3"><img class="site-logo-footer" src="assets/logo/cm-logo-white.png" alt="Concepts Media"></div>
+        <p class="mb-0">Ihr Erfolg ist unser Geschäft.</p>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h4 class="mb-3">Leistungen</h4>
+        <ul>
+          <li><a href="standorte.html">Standorte</a></li>
+          <li><a href="visualisierung.html">Visualisierung</a></li>
+          <li><a href="ladenbau.html">Ladenbau</a></li>
+          <li><a href="vermieter.html">Für Vermieter</a></li>
+          <li><a href="konzepte.html">Konzepte</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h4 class="mb-3">Firma</h4>
+        <ul>
+          <li><a href="referenzen.html">Referenzen</a></li>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <h4 class="mb-3">Kontakt</h4>
+        <p class="mb-1">Kurfürstendamm 102, 10711 Berlin</p>
+        <p class="mb-1"><a href="tel:+4917238338366">+49 172 383 383 6</a></p>
+        <p class="mb-0"><a href="mailto:info@conceptsmedia.de">info@conceptsmedia.de</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom d-flex flex-wrap justify-content-between gap-3">
+      <span>© 2026 Concepts Media</span>
+      <span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/engine.js"></script>
+<script src="assets/js/konzepte.js"></script>
+</body>
+</html>
