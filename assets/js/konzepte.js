@@ -71,7 +71,7 @@
   // Leiste unten fürs Handy
   var bar = document.createElement('div');
   bar.className = 'kz-bar';
-  bar.innerHTML = '<span><b id="kzBarCount">0</b> Bausteine</span><a href="#kzSummary">Paket ansehen</a>';
+  bar.innerHTML = '<span><b id="kzBarCount">0</b> <span id="kzBarW">Bausteine</span></span><a href="#kzSummary">Paket ansehen</a>';
   document.body.appendChild(bar);
 
   var elList = document.getElementById('kzList'), elCount = document.getElementById('kzCount');
@@ -82,7 +82,10 @@
     var ids = []; GROUPS.forEach(function (g) { g.items.forEach(function (it) { if (sel.has(it[0])) ids.push(it[0]); }); });
     elCount.textContent = ids.length;
     document.getElementById('kzBarCount').textContent = ids.length;
+    var w = ids.length === 1 ? 'Baustein' : 'Bausteine';
+    document.getElementById('kzCountW').textContent = w; document.getElementById('kzBarW').textContent = w;
     bar.classList.toggle('is-on', ids.length > 0);
+    elSum.classList.toggle('is-live', ids.length > 0);
     elList.innerHTML = ids.length ? ids.map(function (k) { return '<li>' + LABEL[k] + '</li>'; }).join('') : '<li class="kz-empty">Noch nichts ausgewählt.</li>';
     var body = 'Hallo Concepts Media,\n\nich interessiere mich für ein Konzept Paket' + (packName ? ' (Start: ' + packName + ')' : '') + '.\n' + (scen ? '\nAusgangslage: ' + scen + '\n' : '') + '\nMeine Bausteine:\n' +
       ids.map(function (k) { return '- ' + LABEL[k]; }).join('\n') + '\n\nMein Vorhaben:\n\n\nViele Grüße';
@@ -112,4 +115,32 @@
   });
   document.getElementById('kzReset').addEventListener('click', function () { sel.clear(); packName = ''; render(); });
   render();
+})();
+
+/* Video Fenster: Vorschau anklicken, Video öffnet groß */
+(function () {
+  'use strict';
+  var lb = document.getElementById('kzLb'), vid = document.getElementById('kzLbVid'), x = document.getElementById('kzLbX');
+  if (!lb || !vid) return;
+  var last = null, timer = 0;
+  function open(src, poster, from) {
+    clearTimeout(timer); last = from || null;
+    vid.poster = poster || ''; vid.src = src;
+    lb.hidden = false; document.body.style.overflow = 'hidden';
+    requestAnimationFrame(function () { lb.classList.add('is-open'); });
+    var p = vid.play(); if (p && p.catch) p.catch(function () {});
+    x.focus();
+  }
+  function close() {
+    vid.pause(); lb.classList.remove('is-open'); document.body.style.overflow = '';
+    timer = setTimeout(function () { lb.hidden = true; vid.removeAttribute('src'); vid.load(); }, 300);
+    if (last) last.focus();
+  }
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest('[data-video]'); if (!t) return;
+    e.preventDefault(); open(t.getAttribute('data-video'), t.getAttribute('data-poster'), t);
+  });
+  x.addEventListener('click', close);
+  lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !lb.hidden) close(); });
 })();

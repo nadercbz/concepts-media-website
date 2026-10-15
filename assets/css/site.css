@@ -430,7 +430,7 @@ a .service-card:hover, .service-card:hover { transform: translateY(-6px); box-sh
 .video-block { position: relative; width: 100%; aspect-ratio: 16 / 9; background: var(--cm-black); border-radius: var(--cm-radius); overflow: hidden; }
 .video-block video { width: 100%; height: 100%; object-fit: cover; display: block; }
 /* Erklärvideos mit Ton: immer ganzes Bild zeigen, auch im Vollbild (kein Anschneiden) */
-.kz-vid video, #imagefilm video, #erklaervideo video, #referenz video { object-fit: contain; background: #000; }
+.kz-vid video, #imagefilm video, #erklaervideo video { object-fit: contain; background: #000; }
 
 /* Platzhalter, bis das Pitch-Video fertig ist */
 .video-pending img { width: 100%; height: 100%; object-fit: cover; display: block; }
