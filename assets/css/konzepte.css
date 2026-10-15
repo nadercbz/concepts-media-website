@@ -4,7 +4,8 @@
 .kz-page .section { padding: 4.5rem 0; }
 .kz-page .section-title { font-size: clamp(1.9rem, 3.1vw, 2.8rem); }
 .kz-page .lead-text { font-size: 1.02rem; }
-.kz-hero { padding-bottom: 3.5rem; }
+.kz-hero { padding: 5rem 0 3.5rem; }
+.kz-m { display: none; }
 .kz-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1rem 3rem; align-items: end; margin-bottom: 2rem; }
 .kz-head .lead-text { max-width: none; }
 .kz-cta.section { padding: 4rem 0; }
@@ -146,3 +147,81 @@ button.btn-cm, button.btn-cm-outline { cursor: pointer; }
   #kzBausteine { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) { .kz-pack, .kz-block, .kz-bar, .kz-lb, .kz-lb-box, .kz-thumb img { transition: none; } .kz-summary.is-flash { animation: none; } }
+
+/* Handy: kompakt, kurze Texte (kz-m), lange Texte nur ab Tablet (kz-d) */
+@media (max-width: 767.98px) {
+  .kz-d, .kz-hide-m { display: none !important; }
+  .kz-m { display: inline; }
+  .kz-page .section { padding: 2.4rem 0; }
+  .kz-page .section-title { font-size: 1.75rem; }
+  .kz-page .lead-text { font-size: .95rem; line-height: 1.5; }
+  .kz-page .eyebrow { margin-bottom: .4rem !important; }
+  .kz-head { gap: .45rem; margin-bottom: 1.1rem; }
+
+  .kz-hero { padding: 1.4rem 0 2.2rem; }
+  .kz-hero .row { --bs-gutter-y: 1.2rem; }
+  .kz-hero .display { font-size: 2.45rem; line-height: .98; margin-bottom: .8rem !important; }
+  .kz-hero .lead-text { margin-bottom: 1rem !important; }
+  .kz-hero-btns .btn-cm-outline { padding: .7rem 1.25rem; }
+
+  /* Ausgangslage als Zeilen: kleines Video links, Text rechts */
+  #ausgangslage .row { --bs-gutter-y: .7rem; }
+  .kz-sc { flex-direction: row; border-radius: 16px; }
+  .kz-sc .kz-thumb { flex: 0 0 38%; aspect-ratio: auto; min-height: 112px; }
+  .kz-sc .kz-thumb img { position: absolute; inset: 0; }
+  .kz-sc .kz-play { width: 40px; height: 40px; margin: -20px 0 0 -20px; }
+  .kz-sc .kz-play::before { left: 16px; top: 13px; border-left-width: 11px; border-top-width: 7px; border-bottom-width: 7px; }
+  .kz-sc .kz-dur { left: 7px; bottom: 7px; font-size: .6rem; padding: .12rem .42rem; }
+  .kz-scen { padding: .7rem .8rem .75rem; }
+  .kz-scen .num { font-size: .68rem; margin-bottom: .1rem; }
+  .kz-sc-t { font-size: 1rem; }
+  .kz-sc-p { font-size: .82rem; margin-top: .12rem; line-height: 1.35; }
+  .kz-pick { margin-top: .45rem; font-size: .7rem; padding: .18rem .6rem; }
+  .kz-alt { margin-top: 1rem !important; font-size: .86rem; }
+
+  /* Pakete zum Wischen */
+  #kzPakete { flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: 4px; }
+  #kzPakete::-webkit-scrollbar { display: none; }
+  #kzPakete > [class*="col-"] { flex: 0 0 84%; max-width: 84%; scroll-snap-align: start; }
+  #kzPakete { align-items: flex-start; }
+  .kz-pack { height: auto; }
+  .kz-pack { padding: 1.15rem; border-radius: 18px; }
+  .kz-pack:hover { transform: none; }
+  .kz-pack h3 { font-size: 1.25rem; }
+  .kz-pack-sub { font-size: .86rem; margin-bottom: .6rem; }
+  .kz-pack li { font-size: .85rem; padding: .24rem 0 .24rem 1.15rem; }
+  .kz-pack li::before { top: .62rem; width: .5rem; height: .5rem; }
+  .kz-pack ul { margin-bottom: .9rem; }
+  .kz-badge { top: 1rem; right: 1rem; }
+  .kz-swipe.kz-m { display: block; text-align: center; margin: .7rem 0 0; font-family: "Geist Mono", ui-monospace, monospace; font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--cm-grey); }
+
+  /* Baukasten: Stichworte in zwei Spalten */
+  #kzBausteine { grid-template-columns: 1fr; gap: .9rem; }
+  .kz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .kz-group h3 { margin-bottom: .35rem; }
+  .kz-block { padding: .55rem .5rem .55rem 1.9rem; border-radius: 11px; }
+  .kz-block span { display: none; }
+  .kz-block strong { font-size: .8rem; line-height: 1.22; }
+  .kz-block::before { left: .55rem; top: .6rem; width: .9rem; height: .9rem; }
+  .kz-summary { margin-top: 1rem; padding: 1rem; gap: .7rem; border-radius: 16px; }
+  .kz-summary-count { font-size: 1.2rem; }
+
+  /* Ablauf: Nummer links, Text rechts */
+  .kz-steps3 { gap: .55rem; margin-bottom: 1.5rem; }
+  .kz-steps3 li { display: grid; grid-template-columns: 2.1rem 1fr; padding-top: .55rem; font-size: .88rem; border-top-width: 1px; }
+  .kz-steps3 li::before { grid-row: 1 / span 2; margin: .15rem 0 0; }
+  .kz-steps3 strong { grid-column: 2; font-size: .98rem; margin: 0; }
+  .kz-steps3 li > span { grid-column: 2; }
+
+  /* Referenz */
+  .kz-ref { border-radius: 16px; }
+  .kz-ref .kz-thumb { aspect-ratio: 2 / 1; }
+  .kz-ref-body { padding: 1rem 1.1rem 1.15rem; }
+  .kz-ref h3 { font-size: 1.2rem; margin-bottom: .4rem; }
+  .kz-ref-body > p { font-size: .86rem; margin-bottom: .8rem; }
+  .ref-facts { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 .6rem; }
+  .ref-facts li { font-size: .7rem; padding-top: .45rem; }
+  .ref-facts b { font-size: 1.25rem; }
+
+  .kz-cta.section { padding: 2.6rem 0; }
+}
